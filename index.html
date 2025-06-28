@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cálculo de Passagem</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>Calcule seu gasto mensal com passagens</h2>
+    <label for="diasPorSemana">Dias por semana:</label>
+    <input type="number" id="diasPorSemana" min="1" max="7" />
+
+    <label for="mes">Mês:</label>
+    <select id="mes">
+      <option value="0">Janeiro</option>
+      <option value="1">Fevereiro</option>
+      <option value="2">Março</option>
+      <option value="3">Abril</option>
+      <option value="4">Maio</option>
+      <option value="5">Junho</option>
+      <option value="6">Julho</option>
+      <option value="7">Agosto</option>
+      <option value="8">Setembro</option>
+      <option value="9">Outubro</option>
+      <option value="10">Novembro</option>
+      <option value="11">Dezembro</option>
+    </select>
+
+    <label for="salarioDia">Dia que recebeu o salário:</label>
+    <input type="number" id="salarioDia" min="1" max="31" />
+
+    <button id="calcularBtn">Calcular</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script type="module" src="./dist/index.js"></script>
+</body>
+</html>
