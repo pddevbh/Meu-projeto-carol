@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cálculo de Passagem</title>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -35,7 +36,26 @@
 
     <div id="resultado"></div>
   </div>
+<script>
+  document.getElementById("calcularBtn").addEventListener("click", () => {
+    const dias = parseInt(document.getElementById("diasPorSemana").value);
+    const mes = parseInt(document.getElementById("mes").value);
+    const salarioDia = parseInt(document.getElementById("salarioDia").value);
 
-  <script type="module" src="./dist/index.js"></script>
+    const anoAtual = new Date().getFullYear();
+    const semanas = Math.ceil(new Date(anoAtual, mes + 1, 0).getDate() / 7);
+    const diasTrabalhoMes = semanas * dias;
+    const valorDiario = 11;
+    const total = diasTrabalhoMes * valorDiario;
+
+    const resultadoDiv = document.getElementById("resultado");
+    resultadoDiv.innerHTML = `
+      <p>🔢 Dias trabalhados no mês: <strong>${diasTrabalhoMes}</strong></p>
+      <p>💰 Valor por dia: <strong>R$ ${valorDiario.toFixed(2)}</strong></p>
+      <p>📆 Total gasto no mês: <strong>R$ ${total.toFixed(2)}</strong></p>
+    `;
+  });
+</script>
+
 </body>
 </html>
